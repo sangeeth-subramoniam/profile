@@ -7,6 +7,13 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+
+
+
+
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 /* p{
@@ -39,6 +46,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         <div class="w3-container">
           <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Fullstack Product Developer</p>
+          <p><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-large w3-text-teal"></i>Bachelor’s Degree in Computer Science</p>
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Tokyo, Japan</p>
           <p> <a href="mailto:sangeethsubramoniam@gmail.com"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>sangeethsubramoniam@gmail.com</a> </p>
           <p> <a href="tel:+8108095863651"> <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>080-9586-3651 </a> </p>
@@ -80,10 +88,58 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           </div>
           <br>
 
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Skillset</b></p>
-          <p> <a href="https://www.python.org/" target="_blank" class="links">Python</a> , <a href="https://docs.djangoproject.com/en/4.0/" target="_blank" class="links">Django</a> , <a href="https://flask.palletsprojects.com/en/2.1.x/" target="_blank" class="links">Flask</a> , <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="links">JS</a> , <a href="https://reactjs.org/" target="_blank" class="links">ReactJS</a> , <a href="https://en.wikipedia.org/wiki/SQL" target="_blank" class="links">SQL</a> , 
-            <a href="https://aws.amazon.com/" target="_blank" class="links">AWS</a> ,<a href="https://azure.microsoft.com/" target="_blank" class="links">AZURE</a> ,<a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" class="links">REST API</a> ,<a href="https://wireframe.cc/" target="_blank" class="links">WireFrame</a> ,<a href="#" target="_blank" class="links">UI/UX</a>, <a href="https://github.com/" target="_blank" class="links">GIT</a>  
-          </p>
+          <div style="padding: 1vh 0vh; border-radius: 5px;">
+
+          <div style="display: flex; justify-content: space-between; margin-top: 5vh; margin-bottom: 5vh;">
+            <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Skillset</b> </p>
+            <button class="button skillset_slider_button_back" id="skillset_slider_button_back"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></button>
+            <button class="button skillset_slider_button" id="skillset_slider_button"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></button>
+          </div>
+          
+          
+
+            <div class="skillset_slider skillset_default">
+              <p> <a href="https://www.python.org/" target="_blank" class="links">Python</a> | <a href="https://docs.djangoproject.com/en/4.0/" target="_blank" class="links">Django</a> | <a href="https://flask.palletsprojects.com/en/2.1.x/" target="_blank" class="links">Flask</a> |  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="links">JS</a> |  <a href="https://reactjs.org/" target="_blank" class="links">ReactJS</a> |  <a href="https://en.wikipedia.org/wiki/SQL" target="_blank" class="links">SQL</a> |  
+                <a href="https://aws.amazon.com/" target="_blank" class="links">AWS</a> | <a href="https://azure.microsoft.com/" target="_blank" class="links">AZURE</a> | <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" class="links">REST API</a> | <a href="https://wireframe.cc/" target="_blank" class="links">WireFrame</a> | <a href="#" target="_blank" class="links">UI/UX</a>|  <a href="https://github.com/" target="_blank" class="links">GIT</a>  
+              </p>
+            </div>
+          
+            <div class="skillset_slider skillset_backend" style="display: none;">
+              <h5>Backend :</h5>
+              <p><a href="https://docs.djangoproject.com/en/4.0/" target="_blank" class="links">Django</a> | <a href="https://flask.palletsprojects.com/en/2.1.x/" target="_blank" class="links">Flask</a></p>
+            </div>
+
+            <div class="skillset_slider skillset_frontend" style="display: none;">
+              <h5>Frontend :</h5>
+              <p><a href="#" target="_blank" class="links"> HTML </a> | <a href="#" target="_blank" class="links"> CSS </a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="links">JS</a> | <a href="https://jquery.com/" target="_blank" class="links">JQUERY</a> | <a href="https://reactjs.org/" target="_blank" class="links">ReactJS</a></p>
+            </div>
+
+            <div class="skillset_slider skillset_database" style="display: none;">
+              <h5>Database :</h5>
+              <p><a href="#"> MYSQL </a> | <a href="#"> PostgreSQL </a> | <a href="#"> SQLite </a> | <a href="#"> Firebase </a> </p>            
+            </div>
+
+            <div class="skillset_slider skillset_cloud" style="display: none;">
+              <h5>Cloud :</h5>
+              <p> <a href="https://aws.amazon.com/" target="_blank" class="links">AWS</a> | <a href="https://azure.microsoft.com/" target="_blank" class="links">AZURE</a> </p>            
+            </div>
+
+            <div class="skillset_slider skillset_template" style="display: none;">
+              <h5>TEMPLATE :</h5>
+              <p> Version control : Git | Design : WireFrame | API : DjangoRestFramework , Flask Rest Api</p>            
+            </div>
+
+            <div class="skillset_slider skillset_others" style="display: none;">
+              <h5>Others :</h5>
+              <p> Version control : Git | Design : WireFrame | API : DjangoRestFramework , Flask Rest Api</p>            
+            </div>
+
+          </div>
+
+
+
+          
+          
 
           <p class="w3-large w3-text-theme" style="margin-top:5vh;"><b><i class="fa fa-id-card-o fa-fw w3-margin-right w3-text-teal"></i>Certifications</b></p>
 
@@ -171,25 +227,33 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         
         <div class="w3-container">
+          <p>I am a <b>fullstack engineer</b> with 2+ years of of non-internship professional software development experience working with Shizuoka Information Processing center Pvt. Ltd. As a Product Developer representing Human Recocia Pvt. Ltd</p>
+          <p>I also have interned as a web application developer with Expanion Pvt.Ltd. under the guidance of <a href="https://www.linkedin.com/in/manikandan-thangarathnam-28060b1" class="links" target="_blank"> MR. Manikandan Thangarathnam </a> who was then, the Director of Engineering of Amazon India</p>
+          <p>I have experience building web and mobile based products and API's with python</p>
+          <hr style="border: 2px dotted #009688;;"> 
+
+          <h5 class="w3-opacity"><b>Fullstack Product Developer / Shizuoka Information Processing Center Pvt.ltd</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Apr 2020 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+          <p>Worked in a series of web based product development projects representing Human Resocia Pvt.Ltd. that directly impacted many business, Improving efficiency by digitizing and reducing redundant tasks.  </p>
+          <p>Was the only Foreigner in the entire organisation, which was challenging and on the other hand, Fecilitated a great learning of business culture in Japan</p>
+          <a href="https://www.sicis.co.jp/" target="_blank" class="links"> <i class="fa fa-link" aria-hidden="true"></i> Shizuoka Information Processing Center official Website </a>
+          <hr>
+          
+        </div>
+
+        <div class="w3-container">
           <h5 class="w3-opacity"><b>Fullstack Product Developer / HumanResocia Pvt.ltd </b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Feb 2020 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>I worked as a part of a huge international team, learning business Japanese and attended manner workshops. Self learnt new technologies with the resources from Human Academy for technical learning.</p>
+          <p>Worked as a part of a huge international team, learning business Japanese and attended manner workshops. Self learnt new technologies with the resources from Human Academy for technical learning.</p>
           
-          <p> ( Human Resocia is a dispatching and support company and is a part of the Human Holdings Japan. It provides various support for foreign Engineers under the GIT program which stands for Global IT ) </p>
+          <p> ( Human Resocia is a dispatching and support company and is a part of the Human Holdings Group Japan. It provides various support for foreign Engineers under the GIT program which stands for Global IT ) </p>
           
           <a href="https://corporate.resocia.jp/" target="_blank" class="links"> <i class="fa fa-link" aria-hidden="true"></i> Human Resocia official Website </a>
           <hr>
         </div>
+        
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Fullstack Product Developer / Shizuoka Information Processing Center Pvt.ltd</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Apr 2020 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>I Worked in a series of web based product development projects that directly impacted many business, Improving efficiency by digitizing and reducing redundant tasks.  </p>
-          <p>I was the only Foreigner in the entire organisation, which was challenging and on the other hand, Fecilitated a great learning of business culture in Japan</p>
-          <a href="https://www.sicis.co.jp/" target="_blank" class="links"> <i class="fa fa-link" aria-hidden="true"></i> Shizuoka Information Processing Center official Website </a>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Product Developer / Internship at Expanion pvt.ltd</b></h5>
+          <h5 class="w3-opacity"><b>Product Developer / Internship at Expanion pvt.ltd. </b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2016 - Mar 2017</h6>
           <p>Interned as Application Developer for Expanion under the direct guidance of <a href="https://www.linkedin.com/in/manikandan-thangarathnam-28060b1" class="links" target="_blank"> <b>Mr. Manikandan Thangarathnam</b> </a> who was the <b>Director of Engineering Amazon, India</b> then.</p>
           <hr>
@@ -223,8 +287,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
     <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"> <i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-teal " ></i>Education</h2>
+        <h2 class="w3-text-grey w3-padding-11"> <i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-teal " ></i>Education</h2>
         <div class="w3-container">
+          <h5 class="w3-opacity "><b> <i class="fa fa-link" aria-hidden="true"></i> <a href="https://www.citchennai.edu.in/" target="_blank" style="text-decoration: none;" > Chennai Institute of technology </a> </b></h5>
           <h5 class="w3-opacity"><b>Badchelors Of Engineering in Computer Science</b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2015 - 2019</h6>
           <p>Graduated as an Engineer in the computer Science stream with an aggregate point of 8 / 10. I was the Computer Science department president for my batch and have organized various national level events under my tenure.</p>
@@ -234,11 +299,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
     <div class="w3-container w3-card w3-white">
         <h2 class="w3-text-grey w3-padding-15"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
-        <p><span class="project_heading">Ledger/Signboard Manager :</span> Its a Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, aperiam!</p>
-        <p><span class="project_heading">Meter Management :</span> Its a Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, aperiam!</p>
-        <p><span class="project_heading"> label reader :</span> Its a Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, aperiam!</p>
-        <p><span class="project_heading"> Digi Pharmacy :</span> Its a Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, aperiam!</p>
-        <p><span class="project_heading"> Hobby Projects :</span>  <a href="http://sangeeth-erp.herokuapp.com/" target="_blank" class="links">Office suite / ERP </a> , <a href="http://sangeeth-sellify.herokuapp.com/" target="_blank" class="links">Sellify</a> , <a href="http://sangeeth-ecom.herokuapp.com/" target="_blank" class="links">E-Com</a> , <a href="http://sangeeth-buildingmanagement.herokuapp.com/" target="_blank" class="links">Building Management</a> , <a href="http://sangeeth-qrapp.herokuapp.com/" target="_blank" class="links">QR App</a>  </p>
+        <p style="font-size: small;"><span class="project_heading" style="font-size: large;">Ledger/Signboard Manager :</span> A Web application that manages signboard ledger rentings and maintenance</p>
+        <p style="font-size: small;"><span class="project_heading" style="font-size: large;">Meter Management :</span> A web application that facilitates electricity, Gas and Water meters to be shared within a commercial entity</p>
+        <p style="font-size: small;"><span class="project_heading" style="font-size: large;"> label reader :</span> A Web / Mobile application that automates Food processing using AZURE image processing and OCR features</p>
+        <p style="font-size: small;"><span class="project_heading" style="font-size: large;"> Digi Pharmacy :</span> A web application that is used to automate the pharmacy workflow</p>
+        <p><span class="project_heading"> Hobby Projects :</span>  <a href="https://sangeeth-erp.herokuapp.com/" target="_blank" class="links">Office suite / ERP </a> , <a href="https://sangeeth-sellify.herokuapp.com/" target="_blank" class="links">Sellify</a> , <a href="https://sangeeth-ecom.herokuapp.com/" target="_blank" class="links">E-Com</a> , <a href="https://sangeeth-buildingmanagement.herokuapp.com/" target="_blank" class="links">Building Management</a> , <a href="https://sangeeth-qrapp.herokuapp.com/" target="_blank" class="links">QR App</a>  </p>
 
     </div>
 
@@ -533,13 +598,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 <footer class="w3-container w3-teal w3-center w3-margin-top">
   <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <a href="https://www.facebook.com/sangeeth.dx.9"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+  <a href="https://www.instagram.com/sangeeth_subramoniam/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+  <a href="https://www.snapchat.com/add/sangeethss?share_id=RjU4NTJBRjgtODMxOC00RUI2LTgzNzQtOThFNzY2NjY3N0I0&locale=en_JP"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+  <a href="https://twitter.com/fc4b04ad06e84ca"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+  <a href="https://www.linkedin.com/in/sangeeth-subramoniam/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <p>Base template credits <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
 <style>
@@ -566,6 +630,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     .button:hover{
       background-color: rgba(255, 255, 255, 0.411);
       color: #009688;
+      cursor: pointer;
     }
 
     .certificate-div:hover{
@@ -577,11 +642,39 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       font-size: large;
     }
 
+    .skillset_slider_button, .skillset_slider_button_back{
+      height: 30px;
+      margin-top: 3%;
+    }
+
+
+    .skillset_slider{
+      background-color: #e9ecef;
+      border-radius: 5px;
+      padding: 2%;
+      opacity: 1;
+      animation-name: fadeInOpacity;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in;
+      animation-duration: 1s;
+    }
+    
+    @keyframes fadeInOpacity {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
 </style>
 
 <script>
 
   $( document ).ready(function() {
+
+    sessionStorage.setItem('skillset_iter' , 0)
 
     sessionStorage.setItem('language', 'en');
     let initial_language = sessionStorage.getItem('language');
@@ -590,8 +683,120 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       sessionStorage.setItem('language', 'en');
       //alert('language set to eng')
     }
+
     
+    //alert(typeof(sessionStorage.getItem('skillset_iter')))
+    //alert(parseInt(sessionStorage.getItem('skillset_iter')) + 1)
+  
   });
+
+  $('#skillset_slider_button').click( function(){
+    //alert('skilsetsliderbutton front')
+    let sliderval = parseInt(sessionStorage.getItem('skillset_iter')) + 1;
+    
+    if(sliderval >= 6){
+      sessionStorage.setItem('skillset_iter' , parseInt(0));
+      sliderval = 0;
+    }else{
+      sessionStorage.setItem('skillset_iter' , sliderval);
+    }
+
+    //alert('new sliderval front is ' + sessionStorage.getItem('skillset_iter'))
+
+    //$('#session_val').text('( Slide ' + sessionStorage.getItem('skillset_iter') + ' )');
+
+    //alert('changing slide')
+
+    $('.skillset_slider').css('display' , 'none')
+
+    if(sliderval == parseInt(0)){
+      
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_default').css('display' , 'block');
+    }
+    else if(sliderval == 1){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_backend').css('display' , 'block');
+    }
+    else if(sliderval == 2){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_frontend').css('display' , 'block');
+    }
+
+    else if(sliderval == 3){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_cloud').css('display' , 'block');
+    }
+    else if(sliderval == 4){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_template').css('display' , 'block');
+    }
+    else if(sliderval == 5){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_others').css('display' , 'block');
+    }
+    else if(sliderval == 6){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_default').css('display' , 'block');
+    }
+
+    
+  } );
+
+
+
+  $('#skillset_slider_button_back').click( function(){
+    //alert('skilsetsliderbutton back')
+    let sliderval = parseInt(sessionStorage.getItem('skillset_iter')) - 1;
+    
+    if(sliderval <= -1){
+      sessionStorage.setItem('skillset_iter' , 5);
+      sliderval = 5;
+    }else{
+      sessionStorage.setItem('skillset_iter' , sliderval);
+    }
+
+    //alert('new sliderval back is ' + sessionStorage.getItem('skillset_iter'))
+
+    //$('#session_val').text('( Slide ' + sessionStorage.getItem('skillset_iter') + ' )');
+
+    //alert('changing slide')
+
+    //$('.skillset_slider').css('display' , 'none')
+
+    //alert(sliderval , typeof(sliderval))
+
+    if(sliderval == parseInt(0)){
+      
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_default').css('display' , 'block');
+    }
+    else if(sliderval == 1){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_backend').css('display' , 'block');
+    }
+    else if(sliderval == 2){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_frontend').css('display' , 'block');
+    }
+
+    else if(sliderval == 3){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_cloud').css('display' , 'block');
+    }
+    else if(sliderval == 4){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_template').css('display' , 'block');
+    }
+    else if(sliderval == parseInt(5)){
+      $('.skillset_slider').css('display' , 'none')
+      $('.skillset_others').css('display' , 'block');
+    }
+
+    
+  } );
+
+
 
 
   $('.language_button').click( function(){
@@ -614,6 +819,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         $('#english_container').css('display','block')
       }
   });
+
+  //$('#session_val').text('( Slide ' + sessionStorage.getItem('skillset_iter') + ' )');
 
 </script>
 
