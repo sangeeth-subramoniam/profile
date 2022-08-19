@@ -228,7 +228,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         
         <div class="w3-container">
-          <p>I am a <b>fullstack engineer</b> with 2+ years of of non-internship professional software development experience working with Shizuoka Information Processing center Pvt. Ltd. As a Product Developer representing Human Recocia Pvt. Ltd</p>
+          <p>I am a <b>fullstack engineer</b> with <b>( <span id="experience_years" style="color: black;"></span> )</b> of non-internship professional software development experience working with Shizuoka Information Processing center Pvt. Ltd. As a Product Developer representing Human Recocia Pvt. Ltd</p>
           <p>I also have interned as a web application developer with Expanion Pvt.Ltd. under the guidance of <a href="https://www.linkedin.com/in/manikandan-thangarathnam-28060b1" class="links" target="_blank"> MR. Manikandan Thangarathnam </a> who was then, the Director of Engineering of Amazon India</p>
           <p>I have experience building web and mobile based products and API's with python</p>
           <hr style="border: 2px dotted #009688;;"> 
@@ -535,7 +535,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         
         <div class="w3-container">
           
-          <p><b>フルスタック エンジニアで</b>あり、 株式会社ヒューマンレコシアを代表して、 株式会社静岡情報処理センター で製品開発者として2年間の仕事経験</p>
+          <p><b>フルスタック エンジニアで</b>あり、 株式会社ヒューマンレコシアを代表して、 株式会社静岡情報処理センター で製品開発者として <b>( <span id="experience_years_japanese" style="color: black;"></span> )</b> の仕事経験</p>
           
           <p>株式会社Expanionでは、当時アマゾン インドのエンジニアリング ディレクターの <a href="https://www.linkedin.com/in/manikandan-thangarathnam-28060b1" class="links" target="_blank"> マニカンダン  タンガラトナム</a> さんの指導の下でWeb アプリケーション開発者としてインターンシップ</p>
           
@@ -751,6 +751,25 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
     //alert(typeof(sessionStorage.getItem('skillset_iter')))
     //alert(parseInt(sessionStorage.getItem('skillset_iter')) + 1)
+
+
+    //set experience years
+
+    var currentTime = new Date()
+
+    let starttime = new Date('February 14, 2020 00:00:00');
+
+    let difference_in_years = currentTime.getFullYear() - starttime.getFullYear();
+    let difference_in_months = currentTime.getMonth() - starttime.getMonth();
+
+    //alert(difference_in_years) 
+    //alert(difference_in_months) 
+
+    let exp = String(difference_in_years) + " years and " + String(difference_in_months) + " months"
+    let exp_japanese = String(difference_in_years) + " 年 " + String(difference_in_months) + " ヶ月"
+
+    $("#experience_years").text(exp);
+    $("#experience_years_japanese").text(exp_japanese);
   
   });
 
